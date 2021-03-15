@@ -40,6 +40,4 @@ this script was designed for loading data from hive table to ClickHouse database
 
 ### Compare to  other solutions
 We have lots of solutions for loading hive data to ClickHouse ,but why does this script still came out?
-For now,you can choose many solutions such as Alibaba DataX/ WaterDrop/SparkSQL/Java-api/JDBC;But all these solutions have heavy dependecies or low effiency. So we just make it simple and ligth-weight.
-
-
+For now,you can choose many solutions such as Alibaba DataX/ WaterDrop/SparkSQL/Java-api/JDBC;But all these solutions have heavy dependecies or low effiency(For example,solutions based on JDBC interface can not avoid such transformation like *column-format data --> row-format data --> finally column-format data * ). So we just make it simple and ligth-weight,straightly load column format data from hive to ClickHouse database
