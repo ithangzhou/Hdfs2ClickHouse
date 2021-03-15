@@ -1,5 +1,7 @@
 # Hdfs2ClickHouse
 
+[English](README_zh.md)
+
 本项目包含一系列将hive表数据加载到ClickHouse数据库的轻量级脚本工具
 
 ## shell/Hdfs2ClickHouse.sh 简介

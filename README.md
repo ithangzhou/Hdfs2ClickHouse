@@ -1,5 +1,7 @@
 # Hdfs2ClickHouse
 
+[中文](README_zh.md)
+
 A set of scripts focus on loading data from hive tables in hdfs-system to ClickHouse database with low dependencies and high efficiency
 
 ## shell/Hdfs2ClickHouse.sh
