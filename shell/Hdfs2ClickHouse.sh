@@ -149,8 +149,9 @@ fi
 log INFO "config sql:pre_sql is [${pre_sql}],post_sql is [${post_sql}]"
 
 ## clickhouse-server selection,choose a server node from server list randomly each time 
-server_list=(${server//,/ })  
-current_server=${server_list[$(($RANDOM%4))]}
+server_list=${server//,/ }
+server_number=${#server_list[@]}
+current_server=${server_list[${server_number}]}
 log INFO "select server [${current_server}] from provided servers [${server}] for sql-execution"
 
 if [ -n "${pre_sql}" ];then
