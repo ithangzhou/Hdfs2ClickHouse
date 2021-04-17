@@ -1,0 +1,25 @@
+pre_sql: use warehouse_tmp;
+CREATE TABLE  if not exists warehouse_tmp.fact_tb_in_parquet
+(
+    `dimention_col1` Nullable(Int32) COMMENT 'dimention column A',
+    `dimention_clo2` Nullable(Int32) COMMENT 'dimention column B',
+    `pkid` Int32 COMMENT 'record primary key'
+)
+ENGINE = MergeTree()
+ORDER BY (pkid)
+;
+truncate table warehouse_tmp.fact_tb_in_parquet;
+
+post_sql:use warehouse_app_local;
+insert into
+warehouse_app_local.dict_dimention_total_count_local        
+select
+ ifNull(dimention_col1   ,0)
+,ifNull(dimention_clo2 ,0)
+,ifNull(pkid        ,0)
+from
+warehouse_tmp.fact_tb_in_parquet
+where
+dimention_col1 > 0
+and dimention_clo2 > 0
+;

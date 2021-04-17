@@ -20,7 +20,7 @@ A set of scripts focus on loading data from hive tables in hdfs-system to ClickH
 login in a linux server which has *hdfs-client* and *ClickHouse-client* installed,then execute the following command:
 
 ```shell
-hdfs2ClickHouse.sh [-s clickhouse-server] [-u clickhouse-user] [-p clickhouse-password] [-t clickhouse-temp-table] [-H hive-table-hdfs-path] [-f hive-storage-format] [-q config-sql-path] [-c params-config-file]
+hdfs2ClickHouse.sh [-s clickhouse-server] [-u clickhouse-user] [-p clickhouse-password] [-t clickhouse-temp-table] [-H hive-table-hdfs-path] [-f hive-storage-format] [-q config-sql-path]
 ```
 
 parameters instruction as bellow:
@@ -34,7 +34,6 @@ optional args:
 -H  hdfs path for source hive table,should be started with [hdfs://];partion column path can also be appended, eg:[hdfs://hadoop-cluster/hive_dw/app/test_clickhouse_source/date_id=2021-01-31]
 -f  hdfs format for source hive table,default:[Parquet];please visit [https://clickhouse.tech/docs/en/interfaces/formats/] to see full list of supported formats.However,only [Parquet] format is tested by author currently 
 -q  local file path for config sql,default:[config/load.sql]
--c  params config file,used to provide params by local file other than command-line;if it is not empty,params passed by command-line will be overwrited. default:[]
 ```
 
 ### Design Concept

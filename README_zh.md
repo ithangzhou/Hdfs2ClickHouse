@@ -20,7 +20,7 @@
 登录预装有*hdfs-client* 以及 *ClickHouse-client* 的linux服务器，然后执行下面的命令：
 
 ```shell
-hdfs2ClickHouse.sh [-s clickhouse-server] [-u clickhouse-user] [-p clickhouse-password] [-t clickhouse-temp-table] [-H hive-table-hdfs-path] [-f hive-storage-format] [-q config-sql-path] [-c params-config-file]
+hdfs2ClickHouse.sh [-s clickhouse-server] [-u clickhouse-user] [-p clickhouse-password] [-t clickhouse-temp-table] [-H hive-table-hdfs-path] [-f hive-storage-format] [-q config-sql-path] 
 ```
 
 参数提示如下：
@@ -34,7 +34,6 @@ hdfs2ClickHouse.sh [-s clickhouse-server] [-u clickhouse-user] [-p clickhouse-pa
 -H 数据源hive表的hdfs文件路径，必须以[hdfs://]开头；分区列也可以包含在内，例如[hdfs://hadoop-cluster/hive_dw/app/test_clickhouse_source/date_id=2021-01-31]
 -f 数据源hive表的hdfs存储格式，默认[Parquet]；其它格式请参见 [https://clickhouse.tech/docs/en/interfaces/formats/] 
 -q 包含有前/后处理sql的本地文件路径；默认为空
--c 保存上述可选参数的本地文件路径。该参数为有效文件路径时，以上可选参数均会被文件中配置的参数值覆盖；默认为空
 ```
 
 ### 设计理念
