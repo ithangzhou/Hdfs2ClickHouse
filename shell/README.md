@@ -14,7 +14,6 @@ dimention_col1  int comment 'dimention column A'
 , dimention_clo2  int comment 'dimention column B'
 , pkid int comment 'record primary key'
 )
-comment '字典报表所有维度汇总'
 stored as parquet
 ;
 ```
@@ -79,7 +78,7 @@ ClickHouse client version 20.8.6.6 (official build).
 # check hdfs-client
 $ hdfs version
 Hadoop 2.6.0-cdh5.8.2
-Compiled by nixuchi on 2017-06-05T03:49Z
+Compiled by TomBombadil on 2016-07-02T03:49Z
 ```
 
 ### step 4
